@@ -88,7 +88,7 @@ class PayUCLS
 	{	
 		if ( $this->makeUrl && !is_array( $val ) ) $this->mArr[$name] = htmlentities($val);
 		$str = "";
-		if ( !is_array( $val ) ) return '<input type="hidden" name="'.$name.'" value="'.$val.'">'."\n";
+		if ( !is_array( $val ) ) return '<input type="hidden" name="'.$name.'" value="'.htmlspecialchars($val).'">'."\n";
 		foreach ($val as $v) $str .= $this->makeString( $name.'[]', $v );
 		return $str;
 	}
