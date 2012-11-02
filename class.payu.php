@@ -20,7 +20,7 @@
 		function _initVars(){
 			
 			$this->title = "PayU payment system";
-			$this->description = "Ссылка для IPN : <b>" . htmlentities($this->getDirectTransactionResultURL( 'result',array(__FILE__) ),ENT_QUOTES,'utf-8')."</b>";
+			$this->description = "Платежный агрегатор PayU";
 			$this->sort_order = 1;
 	
 			$this->Settings = array( 
@@ -105,6 +105,17 @@
 		}
 
 */
+		function getCustomProperties()
+		{
+			$customProperties = array();
+			$customProperties[] = array(
+										'settings_title'=>'IPN',
+										'id'=>$this->ModuleConfigID,
+										'control'=>HtmlSpecialChars($this->getDirectTransactionResultURL('result',array($this->ModuleConfigID,__FILE__))),
+										);
+			return $customProperties;
+		}
+
 		function payment_process( $order ){
 
 			$cartEntry = new ShoppingCart();
