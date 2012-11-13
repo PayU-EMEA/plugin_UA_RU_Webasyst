@@ -25,4 +25,4 @@
 >4. Заполнить все необходимые поля ( Короткое описание на скриншоте )
 ![Скриншот][1]
 
-[1] https://raw.github.com/PayUUA/WebAsyst/master/settings.png
+[1]: https://raw.github.com/PayUUA/WebAsyst/master/settings.png
